@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --primary: 267 100% 70%;
+    --primary-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+  }
+
+  :root[class~="dark"] {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --primary: 267 100% 70%;
+    --primary-foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.glassmorphism {
+  @apply bg-black/20 backdrop-blur-lg border border-white/10 rounded-lg;
+}
+
+.light .glassmorphism {
+  @apply bg-white/20 border-black/10;
+}
+
+.neon-glow {
+  box-shadow: 0 0 10px theme('colors.primary.DEFAULT'),
+              0 0 20px theme('colors.primary.DEFAULT'),
+              0 0 30px theme('colors.primary.DEFAULT');
+}
+
+.neon-border {
+  @apply border border-primary/50;
+  box-shadow: 0 0 5px theme('colors.primary.DEFAULT'),
+              inset 0 0 5px theme('colors.primary.DEFAULT');
+}
+
+.animated-gradient {
+  background: linear-gradient(
+    45deg,
+    theme('colors.primary.DEFAULT'),
+    theme('colors.purple.600'),
+    theme('colors.blue.500')
+  );
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
