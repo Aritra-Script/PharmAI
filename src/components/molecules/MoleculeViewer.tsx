@@ -12,6 +12,7 @@ export const MoleculeViewer: React.FC<MoleculeViewerProps> = ({ smiles }) => {
     const fetchSDF = async (smiles: string) => {
       const response = await fetch(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/${encodeURIComponent(smiles)}/SDF`);
       if (response.ok) {
+        console.log("got response")
         return await response.text();
       } else {
         console.error('Failed to fetch SDF format');
@@ -22,7 +23,7 @@ export const MoleculeViewer: React.FC<MoleculeViewerProps> = ({ smiles }) => {
     const renderMolecule = async () => {
       if (viewerRef.current && smiles) {
         const element = viewerRef.current;
-        element.innerHTML = ''; // Clear previous content
+        element.innerHTML = ''; 
 
         const sdfData = await fetchSDF(smiles);
         if (sdfData) {
@@ -31,7 +32,8 @@ export const MoleculeViewer: React.FC<MoleculeViewerProps> = ({ smiles }) => {
           });
 
           viewer.addModel(sdfData, 'sdf');
-          viewer.setStyle({}, { stick: { radius: 0.2 } });
+          viewer.setStyle({}, { stick: { radius: 0.15, colorscheme: 'Jmol' }, 
+            sphere: { radius: 0.4 }  });
           viewer.zoomTo();
           viewer.render();
         }
@@ -41,5 +43,5 @@ export const MoleculeViewer: React.FC<MoleculeViewerProps> = ({ smiles }) => {
     renderMolecule();
   }, [smiles]);
 
-  return <div ref={viewerRef} style={{ height: '400px', width: '100%' }} />;
+  return <div ref={viewerRef} style={{ height: '400px', width: '100%' }} className='flex justify-center '/>;
 };

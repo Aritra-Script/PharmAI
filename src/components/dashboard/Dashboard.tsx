@@ -12,14 +12,14 @@ export function Dashboard() {
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
 
   const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault(); // Prevent page refresh
+    event.preventDefault(); 
     const formData = new FormData(event.target as HTMLFormElement);
     const smilesData = formData.get('smiles') as string;
 
     console.log('SMILES Data:', smilesData);
     if (smilesData) {
-      setSMILES(smilesData); // Update state with submitted value
-      setShowMolecule(true); // Show molecule after submission
+      setSMILES(smilesData); 
+      setShowMolecule(true);
     }
   };
 
@@ -49,7 +49,7 @@ export function Dashboard() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="glassmorphism p-6"
+        className="glassmorphism p-6 flex justify-center flex-col"
       >
         {activeTab === 'upload' && (
           <div className="space-y-4">
@@ -59,12 +59,14 @@ export function Dashboard() {
         )}
 
         {activeTab === 'visualize' && (
-          <div className="space-y-4">
+          <div className="space-y-4  w-full">
             <h2 className="text-xl font-semibold">3D Molecule Viewer</h2>
-            <div className="h-[400px] w-full mt-4">
+            <div className="h-[400px] w-full mt-4 flex flex-col align-middle justify-center">
             {showMolecule && (
               
-                <MoleculeViewer smiles={smiles} />
+                <div className='w-full flex justify-center'>
+                  <MoleculeViewer smiles={smiles} />
+                </div>
               
             )}
             </div>
