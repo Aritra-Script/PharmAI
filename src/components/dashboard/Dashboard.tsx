@@ -18,8 +18,8 @@ export function Dashboard() {
 
     console.log('SMILES Data:', smilesData);
     if (smilesData) {
-      setSMILES(smilesData); 
-      setShowMolecule(true);
+      setSMILES(smilesData); // Update state with submitted value
+      setShowMolecule(true); // Show molecule after submission
     }
   };
 
@@ -59,14 +59,14 @@ export function Dashboard() {
         )}
 
         {activeTab === 'visualize' && (
-          <div className="space-y-4  w-full">
+          <div className="space-y-4  w-full flex flex-col gap-6">
             <h2 className="text-xl font-semibold">3D Molecule Viewer</h2>
             <div className="h-[400px] w-full mt-4 flex flex-col align-middle justify-center">
             {showMolecule && (
               
-                <div className='w-full flex justify-center'>
+                
                   <MoleculeViewer smiles={smiles} />
-                </div>
+            
               
             )}
             </div>
