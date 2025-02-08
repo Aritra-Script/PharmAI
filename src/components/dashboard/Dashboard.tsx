@@ -12,14 +12,14 @@ export function Dashboard() {
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
 
   const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault(); // Prevent page refresh
+    event.preventDefault(); 
     const formData = new FormData(event.target as HTMLFormElement);
     const smilesData = formData.get('smiles') as string;
 
     console.log('SMILES Data:', smilesData);
     if (smilesData) {
-      setSMILES(smilesData); // Update state with submitted value
-      setShowMolecule(true); // Show molecule after submission
+      setSMILES(smilesData); 
+      setShowMolecule(true); 
     }
   };
 
