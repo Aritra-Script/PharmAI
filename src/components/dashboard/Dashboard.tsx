@@ -61,7 +61,7 @@ export function Dashboard() {
         {activeTab === 'visualize' && (
           <div className="space-y-4  w-full flex flex-col gap-6">
             <h2 className="text-xl font-semibold">3D Molecule Viewer</h2>
-            <div className="h-[600px] w-full mt-4 flex flex-col align-middle justify-center">
+            <div className="h-[700px] w-full mt-4 flex flex-col align-middle justify-center">
             {showMolecule && (
               
                 
@@ -71,7 +71,7 @@ export function Dashboard() {
             )}
             </div>
 
-            <form className="w-full space-y-4" onSubmit={handleSubmit}>
+            <form className="w-full space-y-4 mt-[100px]" onSubmit={handleSubmit}>
               <h2 className="text-lg font-semibold">Enter the SMILES of the compound</h2>
               <input
                 name="smiles"
