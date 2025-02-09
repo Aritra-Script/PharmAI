@@ -61,11 +61,7 @@ export function Dashboard() {
         {activeTab === 'visualize' && (
           <div className="space-y-4  w-full flex flex-col gap-6">
             <h2 className="text-xl font-semibold">3D Molecule Viewer</h2>
-<<<<<<< HEAD
             <div className="h-[600px] w-full mt-4 flex flex-col align-middle justify-center">
-=======
-            <div className="h-[400px] w-full mt-4 flex flex-col align-middle justify-center">
->>>>>>> origin/main
             {showMolecule && (
               
                 
@@ -79,13 +75,8 @@ export function Dashboard() {
               <h2 className="text-lg font-semibold">Enter the SMILES of the compound</h2>
               <input
                 name="smiles"
-<<<<<<< HEAD
                 className="w-full text-black focus:outline-2 rounded-lg px-4 py-2"
                 placeholder="Enter the SMILES string..."
-=======
-                className="w-full text-black focus:outline-none rounded-lg px-4 py-2"
-                placeholder="Enter the SMILES of the compound"
->>>>>>> origin/main
               />
               <button
                 className="bg-primary w-full px-4 py-2 rounded-lg text-primary-foreground transition-colors duration-200 hover:bg-primary/10"
