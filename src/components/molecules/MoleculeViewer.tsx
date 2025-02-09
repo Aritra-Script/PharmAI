@@ -306,7 +306,7 @@ export const MoleculeViewer: React.FC<MoleculeViewerProps> = ({ smiles }) => {
 
   return (
     <div className="flex flex-row gap-4 w-full h-[700px] p-4"> 
-      <div ref={viewerRef} className="w-1/2 h-[700px] rounded-2xl p-4 border shadow-lg" />
+      <div ref={viewerRef} className="w-1/2 h-[700px] rounded-2xl p-4 border shadow-lg relative" />
       <div className="w-1/2 flex flex-col gap-4">
         <div className="p-4 border rounded-lg w-full">
           <h3>
