@@ -45,6 +45,7 @@ export function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-2 rounded-lg bg-background neon-border focus:ring-2 focus:ring-primary focus:outline-none"
+                placeholder="Enter your email"
                 required
               />
             </div>
@@ -56,6 +57,7 @@ export function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-2 rounded-lg bg-background neon-border focus:ring-2 focus:ring-primary focus:outline-none"
+                placeholder="Enter your password"
                 required
               />
             </div>
