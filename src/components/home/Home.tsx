@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+<<<<<<< HEAD
 import { Beaker, Brain, Microscope, Database, FlaskRound as Flask, Dna, ArrowRight, Atom } from 'lucide-react';
+=======
+import { Beaker, Brain, Microscope, Database, FlaskRound as Flask, Dna, ArrowRight } from 'lucide-react';
+>>>>>>> origin/main
 
 const services = [
   {
@@ -29,11 +33,14 @@ const services = [
     title: 'Structure Optimization',
     description: 'Optimize molecular structures for improved drug-like properties and efficacy.',
   },
+<<<<<<< HEAD
   {
     icon: Atom,
     title: '3D Molecular Analysis',
     description: '3D Rendering of molecule in realtime with chemical and physical properties, suitable for redesigning of compounds.',
   },
+=======
+>>>>>>> origin/main
 ];
 
 export function Home() {
