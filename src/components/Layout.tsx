@@ -407,6 +407,7 @@ import { Outlet, useNavigate, useLocation, Link } from "react-router-dom";
 import { Beaker, Moon, Sun, LogOut } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
 import { useTheme } from "../contexts/ThemeContext";
+import Footer from "./Footer";
 
 export function Layout() {
   const [activeTab, setActiveTab] = useState("PharmaGenius");
@@ -424,7 +425,8 @@ export function Layout() {
   const isAuthPage = ["/login", "/register"].includes(location.pathname);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-background">
+      {/* Header / Navbar */}
       <header className="border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Navbar */}
@@ -438,7 +440,8 @@ export function Layout() {
               </Link>
 
               {/* Tabs */}
-              {!isAuthPage && (
+              {!isAuthPage && location.pathname !== "/" && (
+                
                 <div className="flex items-center space-x-2">
                   {["upload", "Visualise & Predict", "PharmaGenius"].map((tab) => (
                     <button
@@ -499,10 +502,12 @@ export function Layout() {
       </header>
 
       {/* Main Content */}
-      <main className={!isHome ? "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" : ""}>
-        {/* Provide activeTab and setActiveTab to children */}
+      <main className="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <Outlet context={{ activeTab, setActiveTab }} />
       </main>
+
+      <Footer />
+      
     </div>
   );
 }
