@@ -21,7 +21,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"], #Add your url here for frontend
+    allow_origins=["http://localhost:5173","https://aritra-script.github.io/PharmAI/"], #Add your url here for frontend dev url
     allow_credentials=True,
     allow_methods=["*"],  
     allow_headers=["*"],  
