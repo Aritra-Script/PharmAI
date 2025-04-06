@@ -1,4 +1,4 @@
-import React, { useState, KeyboardEvent } from "react";
+import React, { useState, KeyboardEvent, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useOutletContext } from "react-router-dom";
 import { DrugTargetInteraction } from "../molecules/DrugTargetInteraction";
@@ -22,7 +22,16 @@ interface LayoutContext {
 
 export function Dashboard() {
   // Retrieve activeTab from Layout
-  const { activeTab } = useOutletContext<LayoutContext>();
+  const { activeTab, setActiveTab } = useOutletContext<LayoutContext>();
+
+  // Default to MoleculeViewer on first login only (per session)
+  useEffect(() => {
+    const hasDefaulted = sessionStorage.getItem("dashboardDefaulted");
+    if (!hasDefaulted) {
+      setActiveTab("Visualise & Predict");
+      sessionStorage.setItem("dashboardDefaulted", "true");
+    }
+  }, [activeTab, setActiveTab]);
 
   // Upload state
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
@@ -263,7 +272,7 @@ export function Dashboard() {
           </div>
         )}
 
-        {/* PharmaGenius Tab (WhatsApp-Style Chat) */}
+        {/* PharmaGenius Tab */}
         {activeTab === "PharmaGenius" && (
           <div className="flex flex-col space-y-6">
             <div

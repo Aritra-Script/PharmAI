@@ -1,5 +1,7 @@
-<h1>PharmAi</h1>
-<h2>Execute the following commands in terminal :</h2>
+`<h1>`PharmAi `</h1>`
+
+`<h2>`Execute the following commands in terminal :`</h2>`
+
 <ul>
   <li>
     pip install torch==2.5.0
@@ -38,5 +40,21 @@
   </li>
   <li>
     inside admet_api.py change the listening link to this e.g. http://localhost:5173/
+  </li>
+</ul>
+
+<h2>Developers</h2>
+<ul>
+  <li>
+    Aritra Chakraborty - Student @IIITK'28
+  </li>
+  <li>
+    Fadhil Muhammed - Student @IIITK'28
+  </li>
+  <li>
+    Shivkarthik Suresh - Student @IIITK@28
+  </li>
+  <li>
+    Abhinav Jeansha - Student @IIITK@28
   </li>
 </ul>
