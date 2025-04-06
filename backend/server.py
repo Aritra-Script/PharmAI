@@ -1,10 +1,10 @@
-# file: server.py
+# file: server.py for PharmaGenius
 from flask import Flask, request, jsonify
 import requests
 
 app = Flask(__name__)
 
-# Hardcode your Gemini API key here (not recommended for production)
+#  Gemini API key here 
 GEMINI_API_KEY = ""
 
 def call_gemini_api(user_input: str) -> str:

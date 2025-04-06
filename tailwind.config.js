@@ -19,8 +19,16 @@ export default {
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        ripple: 'ripple 0.6s linear',
+      },
+      keyframes: {
+        ripple: {
+          '0%': { width: '0px', height: '0px', opacity: 0.5 },
+          '100%': { width: '500px', height: '500px', opacity: 0 },
+        },
       },
     },
   },
+
   plugins: [],
 };

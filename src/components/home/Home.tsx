@@ -32,7 +32,7 @@ const services = [
   {
     icon: Atom,
     title: '3D Molecular Analysis',
-    description: '3D Rendering of molecule in realtime with chemical and physical properties, suitable for redesigning of com',
+    description: '3D Rendering of molecule in real-time with chemical and physical properties, suitable for redesigning compounds.',
   },
 ];
 
@@ -49,7 +49,7 @@ export function Home() {
           >
             <div className="flex items-center justify-center space-x-3 mb-6">
               <Beaker className="w-12 h-12 text-primary" />
-              <h1 className="text-4xl font-bold">Pharm.AI</h1>
+              <h1 className="text-4xl font-bold text-primary glow-text">Pharm.AI</h1>
             </div>
             <h2 className="text-5xl font-bold leading-tight">
               Accelerating Drug Discovery<br />with Artificial Intelligence
@@ -114,9 +114,13 @@ export function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="glassmorphism p-6 space-y-4"
+                whileHover={{
+                  scale: 1.05, // Slightly enlarges on hover
+                  boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)", // Adds a shadow effect
+                }}
+                className="glassmorphism p-6 space-y-4 transition-transform duration-150 ease-in-out cursor-pointer hover:bg-primary/10"
               >
-                <service.icon className="w-10 h-10 text-primary" />
+                <service.icon className="w-10 h-10 text-primary transition-colors duration-150 group-hover:text-primary/80" />
                 <h3 className="text-xl font-semibold">{service.title}</h3>
                 <p className="text-foreground/80">{service.description}</p>
               </motion.div>

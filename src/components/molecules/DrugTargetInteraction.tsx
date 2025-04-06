@@ -3,11 +3,11 @@ import { useDropzone } from 'react-dropzone';
 import { Upload } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-interface FileUploaderProps {
+interface DrugTargetInteractionProps {
   onFileUpload: (file: File) => void;
 }
 
-export function FileUploader({ onFileUpload }: FileUploaderProps) {
+export function DrugTargetInteraction({ onFileUpload }: DrugTargetInteractionProps) {
   const onDrop = useCallback((acceptedFiles: File[]) => {
     if (acceptedFiles.length > 0) {
       onFileUpload(acceptedFiles[0]);
@@ -31,6 +31,7 @@ export function FileUploader({ onFileUpload }: FileUploaderProps) {
       }`}
       {...getRootProps()}
     >
+      
       <input {...getInputProps()} />
       <Upload className="mx-auto h-12 w-12 text-primary mb-4" />
       <p className="text-lg mb-2">
