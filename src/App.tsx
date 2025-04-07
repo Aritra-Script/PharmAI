@@ -45,7 +45,7 @@ function AppContent() {
   }
 
   return (
-    <Router>
+    <Router basename="/PharmAI/">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
