@@ -118,7 +118,7 @@ export const MoleculeViewer: React.FC<MoleculeViewerProps> = ({ smiles }) => {
 
     const predictAdmet = async () => {
       try {
-        const response = await fetch("http://localhost:8000/predict_admet/", { 
+        const response = await fetch("https://backend-h0p6.onrender.com", { 
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ smiles }),
